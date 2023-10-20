@@ -1,0 +1,14 @@
+version: "3"
+services:
+  mongodocker:
+    image: mongo:latest
+    container_name: "mongodocker"
+    ports:
+      - 27017:27017
+  springbootdocker:
+    image: springbootdocker:1.0
+    container_name: springbootdocker
+    ports:
+      - 8091:8091
+    links:
+      - mongodocker
